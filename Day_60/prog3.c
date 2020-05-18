@@ -1,7 +1,7 @@
 /*
  
-Program 3: Write a Program that accepts an Array on Length N from user and
-           sorts that array in ascending order.
+Program 3: Write a Program that accepts a Array on Length N from user and
+           prints multiplication of all odd elements from that array.
 
 
 */
@@ -9,6 +9,7 @@ Program 3: Write a Program that accepts an Array on Length N from user and
 # include <stdio.h>
 
 void main (void) {
+    
     int x, array [20], mult = 1;
     
     printf ("\nEnter Length of array : ");
@@ -18,20 +19,11 @@ void main (void) {
 
     for (int i = 0; i < x; i++) {
         scanf ("%d", &array [i]);
-    }
-    
-    for (int i = 0; i < x; i++) {
-        for (int j = i; j < x; j++) {
-            if (array [i] > array [j]) {
-                array [i] = array [i] + array [j] - (array [j] = array [i]);
-            }
+        if (array [i] % 2 == 1) {
+            mult *= array [i];
         }
     }
-
-    printf ("\nArray after Sorting operation : ");
-
-    for (int i = 0; i < x; i++) {
-        printf ("%d ", array [i]);
-    }
+    
+    printf ("\nMultiplication of Odd elements from array = %d\n", mult);
 
 }
